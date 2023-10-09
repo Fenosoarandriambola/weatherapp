@@ -58,7 +58,7 @@ export default function Weather() {
             </div>
           </div>
         </div>
-        <a href="https://github.com/Fenosoarandriambola/shecodes">
+        <a href="https://github.com/Fenosoarandriambola/weatherapp/commit/9f6e14a6b4d7effb1111535bcb0faf19ed6deca4">
           {" "}
           github url{" "}
         </a>{" "}
