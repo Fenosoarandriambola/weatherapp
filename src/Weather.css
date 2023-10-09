@@ -1,0 +1,83 @@
+.card-body {
+    color: blue;
+    font-weight: bold;
+}
+
+.card {
+    margin-top: 50px;
+    border-radius: 10px;
+    width: 90%;
+    background-color: rgb(134, 234, 150);
+}
+
+.sun-icon {
+    color: yellow;
+    font-size: 100px;
+}
+
+.container-2 {
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.sun-icon-2 {
+    color: yellow;
+    font-size: 28px;
+}
+
+.cloud-icon {
+    font-size: 24px;
+}
+
+.cloud-rain-icon {
+    font-size: 24px;
+}
+
+#degree {
+    font-size: 40px;
+    color: black;
+}
+
+.units {
+    position: relative;
+    font-size: 15px;
+    top: -20px;
+}
+
+.forecast-date {
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+.forecast-temperature-min {
+    opacity: 0.5;
+}
+
+.forecast-temperature {
+    font-size: 13px;
+}
+
+#searchform {
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+}
+
+#searchtext {
+    width: 700px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: antiquewhite;
+}
+
+.row {
+    margin-top: 2%;
+}
+
+img {
+    width: 100px;
+}
