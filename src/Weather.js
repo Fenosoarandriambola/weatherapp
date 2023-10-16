@@ -1,7 +1,30 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Weather.css";
-export default function Weather() {
-  return (
+import axios from "axios";
+
+export default function Weather(props) {
+
+
+  
+  const [weatherData,setWeatherData]= useState({ready:false});
+
+  function handleResponse(response){
+console.log(response.data);
+setWeatherData({
+  ready:true,
+  temperature:response.data.main.temp,
+  humidity:response.data.main.humidity,
+  wind:response.data.wind.speed,
+  city:response.data.name,
+  description:response.data.weather[0].description,
+  iconUrl:"https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+  date:"Wednesday 7:00",
+
+})
+
+  }
+  if(weatherData.ready){
+return (
     <div className="Weather">
       <div className="container">
         <div className="card">
@@ -25,9 +48,9 @@ export default function Weather() {
               <div className="descr">
                 <div className="row">
                 
-                <div className="col-8"> <h1> Mauritius </h1> </div>
-                <div className="col-8">Thursday 17:53</div>
-                <div className="col-6"> Cloudy</div>
+                <div className="col-8"> <h1> {weatherData.city} </h1> </div>
+                <div className="col-8">{weatherData.date}</div>
+                <div className="col-6 text-capitalize"> {weatherData.description}</div>
               </div>
               
               
@@ -37,17 +60,17 @@ export default function Weather() {
               <div className="row g-0">
                 <div className="col-md-4">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
-                    alt="image"
+                    src={weatherData.iconUrl}
+                    alt={weatherData.description}
                   />
                 </div>
 
                 <div className="col-md-4">
                   <h5 className="card-title">
-                    humidity : <span> 80 </span> %
+                    Humidity : <span> {weatherData.humidity} </span> %
                   </h5>
                   <p className="card-text">
-                    Wind : <span>30 </span>km/h
+                    Wind : <span>{weatherData.wind} </span>km/h
                   </p>
                 </div>
               </div>
@@ -56,7 +79,7 @@ export default function Weather() {
 
               <div className="row">
                 <div className="class-degre">
-                   <span className="temperature"> 19</span> <span className="units">°C </span>
+                   <span className="temperature"> {Math.round(weatherData.temperature)}</span> <span className="units">°C </span>
                 </div>
               </div>
               <div cclassName="forecast"></div>
@@ -73,4 +96,15 @@ export default function Weather() {
       </div>
     </div>
   );
+  } else {
+  const apiKey ="94cd4c88359bbfa73c8c4de8f49c0991";
+  
+  let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(handleResponse);
+  return "Loading...";
+  }
+
+ 
+  
 }
