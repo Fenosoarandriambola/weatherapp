@@ -17,16 +17,21 @@ export default function Weather() {
                   />
                 </div>
                 <div className="col-3">
-                  <button type="submit" className="btn btn-success w-95">
+                  <button type="submit" className="btn btn-success w-90">
                     Search
                   </button>
                 </div>
               </form>
-              <div className="row">
-                <div className="col-8"> Mauritius </div>
+              <div className="descr">
+                <div className="row">
+                
+                <div className="col-8"> <h1> Mauritius </h1> </div>
                 <div className="col-8">Thursday 17:53</div>
                 <div className="col-6"> Cloudy</div>
               </div>
+              
+              
+
               <br />
 
               <div className="row g-0">
@@ -51,18 +56,20 @@ export default function Weather() {
 
               <div className="row">
                 <div className="class-degre">
-                  <strong> </strong> <span className="units"> 19°C</span>
+                   <span className="temperature"> 19</span> <span className="units">°C </span>
                 </div>
               </div>
               <div cclassName="forecast"></div>
+              </div>
             </div>
           </div>
         </div>
+        This project was coded by Fenosoa Randriambola and is open sourced on 
         <a href="https://github.com/Fenosoarandriambola/weatherapp/commit/9f6e14a6b4d7effb1111535bcb0faf19ed6deca4">
           {" "}
           github url{" "}
-        </a>{" "}
-        by Fenosoa Randriambola
+         </a>{" "}
+      
       </div>
     </div>
   );
