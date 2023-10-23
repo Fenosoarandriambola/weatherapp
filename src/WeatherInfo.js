@@ -22,7 +22,7 @@ return (
               <div className="row g-0">
                 <div className="col-md-4">
                   <div className="d-flex">
-                   <WeatherIcon code={props.data.iconUrl}/>
+                   <WeatherIcon code={props.data.iconUrl} size={52}/>
                    
                   </div>
                   
